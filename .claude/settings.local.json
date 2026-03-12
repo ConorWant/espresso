@@ -8,7 +8,12 @@
       "Bash(cd /c/Users/conor/coding/espresso && cp -r tmp-scaffold/app/. . && ls)",
       "Bash(cp tmp-scaffold/app/eslint.config.mjs . && cp tmp-scaffold/app/next.config.ts . && cp -r tmp-scaffold/app/app . && cp -r tmp-scaffold/app/public . && ls)",
       "Bash(npm install:*)",
-      "Bash(npx shadcn@latest init --yes --defaults 2>&1 | tail -20)"
+      "Bash(npx shadcn@latest init --yes --defaults 2>&1 | tail -20)",
+      "Bash(npx shadcn@latest add card input label select slider textarea badge table --yes 2>&1 | tail -20)",
+      "Bash(npx drizzle-kit:*)",
+      "Bash(ls *.db 2>/dev/null && echo \"DB created\" || echo \"No DB found\")",
+      "Bash(npx tsc:*)",
+      "Bash(npm run:*)"
     ]
   }
 }
