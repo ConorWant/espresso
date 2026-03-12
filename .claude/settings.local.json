@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/conor/coding/**)",
+      "Bash(npx create-next-app@latest espresso --typescript --tailwind --app --src-dir=false --import-alias=\"@/*\" --no-git --yes)",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --app --src-dir=false --import-alias=\"@/*\" --no-git --yes 2>&1)",
+      "Bash(mkdir -p tmp-scaffold && cd tmp-scaffold && npx create-next-app@latest app --typescript --tailwind --app --src-dir=false --import-alias=\"@/*\" --no-git --yes 2>&1 && ls app/)",
+      "Bash(cd /c/Users/conor/coding/espresso && cp -r tmp-scaffold/app/. . && ls)",
+      "Bash(cp tmp-scaffold/app/eslint.config.mjs . && cp tmp-scaffold/app/next.config.ts . && cp -r tmp-scaffold/app/app . && cp -r tmp-scaffold/app/public . && ls)",
+      "Bash(npm install:*)",
+      "Bash(npx shadcn@latest init --yes --defaults 2>&1 | tail -20)"
+    ]
+  }
+}
