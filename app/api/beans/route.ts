@@ -10,16 +10,19 @@ export async function GET() {
 
 export async function POST(request: Request) {
   const body = await request.json();
-  const { name, roaster, origin, roast_date, notes } = body;
+  const { name, producer, region, varietal, process, altitude, roast_date, tasting_notes } = body;
 
   const [bean] = await db
     .insert(beans)
     .values({
       name,
-      roaster: roaster || null,
-      origin: origin || null,
+      producer: producer || null,
+      region: region || null,
+      varietal: varietal || null,
+      process: process || null,
+      altitude: altitude || null,
       roast_date: roast_date || null,
-      notes: notes || null,
+      tasting_notes: tasting_notes || null,
       created_at: Date.now(),
     })
     .returning();

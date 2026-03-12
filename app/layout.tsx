@@ -27,22 +27,50 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <div className="min-h-screen bg-background">
-          <nav className="border-b sticky top-0 z-10 bg-background/95 backdrop-blur">
-            <div className="max-w-5xl mx-auto px-4 h-14 flex items-center gap-6">
-              <Link href="/" className="font-bold text-lg">
-                ☕ Espresso
+          {/* Nav */}
+          <nav className="border-b border-border/60 sticky top-0 z-10 bg-background/80 backdrop-blur-md">
+            <div className="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
+              {/* Logo */}
+              <Link href="/" className="flex items-center gap-2.5 group">
+                <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-primary-foreground text-base font-bold shadow-sm">
+                  ☕
+                </div>
+                <span className="font-semibold text-foreground tracking-tight">
+                  Espresso
+                </span>
               </Link>
-              <Link href="/shots" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                Shots
-              </Link>
-              <Link href="/shots/new" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                + Log Shot
-              </Link>
-              <Link href="/beans" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                Beans
-              </Link>
+
+              {/* Nav links */}
+              <div className="flex items-center gap-1">
+                <Link
+                  href="/"
+                  className="px-3 py-1.5 rounded-md text-sm text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+                >
+                  Dashboard
+                </Link>
+                <Link
+                  href="/shots"
+                  className="px-3 py-1.5 rounded-md text-sm text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+                >
+                  Shots
+                </Link>
+                <Link
+                  href="/beans"
+                  className="px-3 py-1.5 rounded-md text-sm text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+                >
+                  Beans
+                </Link>
+                <Link
+                  href="/shots/new"
+                  className="ml-2 px-3 py-1.5 rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+                >
+                  + Log Shot
+                </Link>
+              </div>
             </div>
           </nav>
+
+          {/* Page content */}
           <main className="max-w-5xl mx-auto px-4 py-8">
             {children}
           </main>

@@ -134,7 +134,7 @@ export function ShotForm({ defaultValues, editId }: ShotFormProps) {
                     {beans.map((b) => (
                       <SelectItem key={b.id} value={String(b.id)}>
                         {b.name}
-                        {b.roaster ? ` — ${b.roaster}` : ""}
+                        {b.producer ? ` — ${b.producer}` : ""}
                       </SelectItem>
                     ))}
                   </SelectContent>

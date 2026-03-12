@@ -26,17 +26,18 @@ export function RatingOverTime({ data, targetMin = 7, targetMax = 9 }: Props) {
   return (
     <ResponsiveContainer width="100%" height={300}>
       <LineChart data={data} margin={{ top: 5, right: 20, left: 0, bottom: 5 }}>
-        <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />
-        <XAxis dataKey="date" tick={{ fontSize: 12 }} />
-        <YAxis domain={[1, 10]} ticks={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]} tick={{ fontSize: 12 }} />
-        <Tooltip />
+        <CartesianGrid strokeDasharray="3 3" stroke="#3a2e24" />
+        <XAxis dataKey="date" tick={{ fontSize: 12, fill: "#9c7e65" }} axisLine={false} tickLine={false} />
+        <YAxis domain={[1, 10]} ticks={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]} tick={{ fontSize: 12, fill: "#9c7e65" }} axisLine={false} tickLine={false} />
+        <Tooltip contentStyle={{ background: "#1f1610", border: "1px solid #3a2e24", borderRadius: 8, color: "#f0e6d8" }} />
         <ReferenceLine y={targetMin} stroke="#f59e0b" strokeDasharray="4 4" label={{ value: "min", fontSize: 11 }} />
         <ReferenceLine y={targetMax} stroke="#22c55e" strokeDasharray="4 4" label={{ value: "target", fontSize: 11 }} />
         <Line
           type="monotone"
           dataKey="rating"
-          stroke="#8884d8"
-          dot={{ r: 4 }}
+          stroke="#c8956c"
+          strokeWidth={2}
+          dot={{ r: 4, fill: "#c8956c" }}
           name="Rating"
           connectNulls={false}
         />

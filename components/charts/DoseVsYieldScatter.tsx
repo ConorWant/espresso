@@ -32,20 +32,25 @@ export function DoseVsYieldScatter({ data }: Props) {
   return (
     <ResponsiveContainer width="100%" height={300}>
       <ScatterChart margin={{ top: 5, right: 20, left: 0, bottom: 5 }}>
-        <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />
+        <CartesianGrid strokeDasharray="3 3" stroke="#3a2e24" />
         <XAxis
           dataKey="dose_g"
           name="Dose (g)"
-          tick={{ fontSize: 12 }}
-          label={{ value: "Dose (g)", position: "insideBottom", offset: -2, fontSize: 12 }}
+          tick={{ fontSize: 12, fill: "#9c7e65" }}
+          axisLine={false} tickLine={false}
+          label={{ value: "Dose (g)", position: "insideBottom", offset: -2, fontSize: 12, fill: "#9c7e65" }}
         />
         <YAxis
           dataKey="yield_g"
           name="Yield (g)"
-          tick={{ fontSize: 12 }}
-          label={{ value: "Yield (g)", angle: -90, position: "insideLeft", fontSize: 12 }}
+          tick={{ fontSize: 12, fill: "#9c7e65" }}
+          axisLine={false} tickLine={false}
+          label={{ value: "Yield (g)", angle: -90, position: "insideLeft", fontSize: 12, fill: "#9c7e65" }}
         />
-        <Tooltip cursor={{ strokeDasharray: "3 3" }} />
+        <Tooltip
+          cursor={{ strokeDasharray: "3 3", stroke: "#9c7e65" }}
+          contentStyle={{ background: "#1f1610", border: "1px solid #3a2e24", borderRadius: 8, color: "#f0e6d8" }}
+        />
         <Scatter data={data} name="Shots">
           {data.map((entry, index) => (
             <Cell key={index} fill={ratingColor(entry.rating)} />

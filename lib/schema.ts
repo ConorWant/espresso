@@ -3,10 +3,13 @@ import { integer, real, sqliteTable, text } from "drizzle-orm/sqlite-core";
 export const beans = sqliteTable("beans", {
   id: integer("id").primaryKey({ autoIncrement: true }),
   name: text("name").notNull(),
-  roaster: text("roaster"),
-  origin: text("origin"),
+  producer: text("producer"),
+  region: text("region"),
+  varietal: text("varietal"),
+  process: text("process"),
+  altitude: text("altitude"),
   roast_date: text("roast_date"),
-  notes: text("notes"),
+  tasting_notes: text("tasting_notes"),
   created_at: integer("created_at").notNull(),
 });
 

@@ -13,7 +13,10 @@
       "Bash(npx drizzle-kit:*)",
       "Bash(ls *.db 2>/dev/null && echo \"DB created\" || echo \"No DB found\")",
       "Bash(npx tsc:*)",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(node -e \"\nconst Database = require\\('better-sqlite3'\\);\nconst db = new Database\\('./espresso.db'\\);\ndb.exec\\(\\\\`\n  ALTER TABLE beans ADD COLUMN producer text;\n  ALTER TABLE beans ADD COLUMN region text;\n  ALTER TABLE beans ADD COLUMN varietal text;\n  ALTER TABLE beans ADD COLUMN process text;\n  ALTER TABLE beans ADD COLUMN altitude text;\n\\\\`\\);\nconsole.log\\('Columns added'\\);\ndb.close\\(\\);\n\" 2>&1)",
+      "Bash(node -e \"\nconst Database = require\\('better-sqlite3'\\);\nconst db = new Database\\('./espresso.db'\\);\ndb.exec\\(\\\\`\n  ALTER TABLE beans ADD COLUMN roast_date text;\n  ALTER TABLE beans ADD COLUMN tasting_notes text;\n\\\\`\\);\nconsole.log\\('Done'\\);\ndb.close\\(\\);\n\" 2>&1)",
+      "Bash(node -e \"\nconst Database = require\\('better-sqlite3'\\);\nconst db = new Database\\('./espresso.db'\\);\ndb.exec\\('ALTER TABLE beans ADD COLUMN tasting_notes text;'\\);\nconsole.log\\('Done'\\);\ndb.close\\(\\);\n\" 2>&1)"
     ]
   }
 }
